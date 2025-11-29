@@ -7,6 +7,11 @@
   display: none !important;
 }
 
+/* Change sidebar background color */
+#sidebar {
+  background-color: #1C1B1B !important;
+}
+
 footer {
   margin-top: 2rem;
 }
