@@ -1,6 +1,6 @@
 /* Hide navbar */
-#navbar-transition {
-  display: none;
+#navbar-transition-maple {
+  display: none !important;
 }
 
 /* Hide dark mode toggle button in sidebar */
@@ -10,27 +10,32 @@
 
 /* Change sidebar background color */
 #sidebar {
-  background-color: #191617 !important;
+  background-color: #1C1B1B !important;
 }
 
-/* Change bottom navigation (Support/Dashboard) background color */
-#sidebar > div > ul:last-child {
-  background-color: #191617 !important;
+/* Change bottom navigation (Support/Dashboard) background color - more specific selector */
+#sidebar-content + ul {
+  background-color: #1C1B1B !important;
+}
+
+/* Also target by class combination */
+.bg-background-light.dark\:bg-background-dark.border-t {
+  background-color: #1C1B1B !important;
 }
 
 /* Change main content area background color */
 #content-container {
-  background-color: #0D0A0B !important;
+  background-color: #1F1E1E !important;
 }
 
 /* Change content area background */
 #content-area {
-  background-color: #0D0A0B !important;
+  background-color: #1F1E1E !important;
 }
 
 /* Change overall body background */
 body {
-  background-color: #0D0A0B !important;
+  background-color: #1F1E1E !important;
 }
 
 /* Footer styling */
