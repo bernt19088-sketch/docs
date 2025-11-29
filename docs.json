@@ -67,8 +67,8 @@
     }
   },
   "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "light": "/logo/roundproxies_logo.svg",
+    "dark": "/logo/roundproxies_logo.svg"
   },
   "navbar": {
     "links": [
