@@ -1,5 +1,6 @@
-#navbar-transition-maple {
-  display: none;
+/* Hide navbar */
+#navbar-transition {
+  display: none !important;
 }
 
 /* Hide dark mode toggle button in sidebar */
@@ -17,7 +18,22 @@
   background-color: #1C1B1B !important;
 }
 
+/* Change main content area background color */
+#content-container {
+  background-color: #1F1E1E !important;
+}
 
+/* Change content area background */
+#content-area {
+  background-color: #1F1E1E !important;
+}
+
+/* Change overall body background */
+body {
+  background-color: #1F1E1E !important;
+}
+
+/* Footer styling */
 footer {
   margin-top: 2rem;
 }
