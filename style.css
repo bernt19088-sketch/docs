@@ -2,6 +2,11 @@
   display: none;
 }
 
+/* Hide dark mode toggle button in sidebar */
+#sidebar button[aria-label="Toggle dark mode"] {
+  display: none !important;
+}
+
 footer {
   margin-top: 2rem;
 }
