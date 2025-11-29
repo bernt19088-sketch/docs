@@ -4,8 +4,8 @@
   "name": "Roundproxies Docu",
   "colors": {
     "primary": "#FFFFFF",
-    "light": "#FFFFFF",
-    "dark": "#FFFFFF"
+    "light": "#272626",
+    "dark": "#272626"
   },
   "favicon": "/favicon.ico",
   "navigation": {
