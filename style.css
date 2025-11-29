@@ -23,6 +23,17 @@
   background-color: #1C1B1B !important;
 }
 
+/* Change card backgrounds to match sidebar */
+.card {
+  background-color: #1C1B1B !important;
+}
+
+/* More specific card selector */
+a.card.bg-white,
+a.card.dark\:bg-background-dark {
+  background-color: #1C1B1B !important;
+}
+
 /* Change main content area background color */
 #content-container {
   background-color: #1F1E1E !important;
