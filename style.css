@@ -12,6 +12,12 @@
   background-color: #1C1B1B !important;
 }
 
+/* Change bottom navigation (Support/Dashboard) background color */
+#sidebar > div > ul:last-child {
+  background-color: #1C1B1B !important;
+}
+
+
 footer {
   margin-top: 2rem;
 }
