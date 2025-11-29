@@ -8,6 +8,11 @@
   display: none !important;
 }
 
+/* Hide search bar in sidebar */
+#search-bar-entry {
+  display: none !important;
+}
+
 /* Change sidebar background color */
 #sidebar {
   background-color: #1C1B1B !important;
