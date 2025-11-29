@@ -1,6 +1,6 @@
 /* Hide navbar */
 #navbar-transition {
-  display: none !important;
+  display: none;
 }
 
 /* Hide dark mode toggle button in sidebar */
