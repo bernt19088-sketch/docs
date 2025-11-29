@@ -3,11 +3,12 @@
   "theme": "maple",
   "name": "Mint Starter Kit",
   "colors": {
-    "primary": "#FFFFFF",
-    "light": "#1C1B1B",
-    "dark": "#1C1B1B"
+    "primary": "#16A34A",
+    "light": "#07C983",
+    "dark": "#15803D"
   },
   "favicon": "/favicon.sv",
+  "customCSS": "/custom.css",
   "navigation": {
     "tabs": [
       {
@@ -102,15 +103,15 @@
   },
   "contextual": {
     "options": [
-     "copy",
-     "view",
-     "chatgpt",
-     "claude",
-     "perplexity",
-     "mcp",
-     "cursor",
-     "vscode"
-   ]
+      "copy",
+      "view",
+      "chatgpt",
+      "claude",
+      "perplexity",
+      "mcp",
+      "cursor",
+      "vscode"
+    ]
   },
   "footer": {
     "socials": {
