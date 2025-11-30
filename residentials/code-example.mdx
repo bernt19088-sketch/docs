@@ -1,0 +1,22 @@
+---
+title: "Code"
+description: "Example code on how to run requests with the Residential Proxies"
+---
+
+### Code Example
+
+<CodeGroup>
+
+```python Python
+import requests
+
+proxies = {
+    'http': 'http://client-{}-country-Germany-state-landberlin-city-berlin-session-fnzwtath:df1a09d0542141d1b910d5d7e7a5d5ab@residential.roundproxies.com:5000',
+    'https': 'http://client-77ec791562d243759695e8fb5dc07a81-country-Germany-state-landberlin-city-berlin-session-fnzwtath:df1a09d0542141d1b910d5d7e7a5d5ab@residential.roundproxies.com:5000'
+}
+
+response = requests.get('https://api.ipify.org?format=json', proxies=proxies)
+print(response.json())
+```
+
+</CodeGroup>
