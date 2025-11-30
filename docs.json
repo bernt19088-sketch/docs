@@ -85,7 +85,6 @@
   },
   "contextual": {
     "options": [
-      "copy",
       "chatgpt",
       "claude",
       "perplexity",
@@ -96,8 +95,8 @@
   "footer": {
     "socials": {
       "x": "https://x.com/roundproxies",
-      "discord": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "discord": "https://discord.gg/wEfwhAyqMW",
+      "linkedin": "https://linkedin.com/company/roundproxies"
     }
   }
 }
