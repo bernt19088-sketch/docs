@@ -62,6 +62,16 @@ div.bg-white[data-component-part="code-block-root"] {
   background-color: #1C1B1B !important;
 }
 
+/* Change pagination background colors */
+#pagination {
+  background-color: #1C1B1B !important;
+}
+
+#pagination .bg-background-light,
+#pagination .dark\:bg-background-dark {
+  background-color: #1C1B1B !important;
+}
+
 /* Change main content area background color */
 #content-container {
   background-color: #1F1E1E !important;
@@ -75,10 +85,6 @@ div.bg-white[data-component-part="code-block-root"] {
 /* Change overall body background */
 body {
   background-color: #1F1E1E !important;
-}
-
-#pagination {
-  background-color: #1C1B1B !important;
 }
 
 /* Footer styling */
