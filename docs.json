@@ -23,7 +23,9 @@
           {
             "group": "Residential Proxies",
             "pages": [
-              "residentials/basics"
+              "residentials/basics",
+              "residentials/code-example",
+              "residentials/session"
             ]
           },
           {
