@@ -26,6 +26,13 @@
               "residentials/settings",
               "residentials/navigation"
             ]
+          },
+          {
+            "group": "Residential Proxies",
+            "pages": [
+              "residentials/settings",
+              "residentials/navigation"
+            ]
           }
         ]
       }
