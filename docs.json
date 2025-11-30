@@ -23,15 +23,13 @@
           {
             "group": "Residential Proxies",
             "pages": [
-              "residentials/settings",
-              "residentials/navigation"
+              "residentials/basics"
             ]
           },
           {
             "group": "Datacenter Proxies",
             "pages": [
-              "residentials/settings",
-              "residentials/navigation"
+              "datacenter/basics"
             ]
           }
         ]
