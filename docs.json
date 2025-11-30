@@ -28,7 +28,7 @@
             ]
           },
           {
-            "group": "Residential Proxies",
+            "group": "Datacenter Proxies",
             "pages": [
               "residentials/settings",
               "residentials/navigation"
