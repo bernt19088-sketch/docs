@@ -70,10 +70,6 @@ state-{STATE_NAME}
 
 ### City Targeting
 
-<ResponseField name="city" type="string">
-  State name of the state (mathching the country) you would like to target.
-</ResponseField>
-
 Target specific cities for maximum precision:
 
 ```
@@ -87,28 +83,21 @@ city-{CITY_NAME}
 - `city-bremen` (Germany)
 - `city-berlin` (Germany)
 
-<Tip>
-  
-</Tip>
+## Session Management
 
-<Steps>
-  
-</Steps>
+Sessions allow you to maintain the same IP address across multiple requests, which is essential for activities requiring consistent identity.
 
-### Code Example
+### Session Format
 
-<CodeGroup>
-
-```python Python
-import requests
-
-proxies = {
-    'http': 'http://client-{}-country-Germany-state-landberlin-city-berlin-session-fnzwtath:df1a09d0542141d1b910d5d7e7a5d5ab@residential.roundproxies.com:5000',
-    'https': 'http://client-77ec791562d243759695e8fb5dc07a81-country-Germany-state-landberlin-city-berlin-session-fnzwtath:df1a09d0542141d1b910d5d7e7a5d5ab@residential.roundproxies.com:5000'
-}
-
-response = requests.get('https://api.ipify.org?format=json', proxies=proxies)
-print(response.json())
+```
+session-{SESSION_ID}
 ```
 
-</CodeGroup>
+The session ID can be any alphanumeric string. Using the same session ID will route your requests through the same IP address.
+
+**Example session IDs:**
+
+- `session-lw515ejc`
+- `session-gbyii4th`
+- `session-wwmchxfs`
+- `session-fnzwtath`
