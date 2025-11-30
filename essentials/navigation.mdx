@@ -15,19 +15,12 @@ residential.roundproxies.com:5000:client-{CLIENT_ID}-{TARGETING_PARAMS}-session-
 ### Components Breakdown
 
 | Component | Description | Example |
-
 |-----------|-------------|---------|
-
 | **Host** | Proxy server hostname | `residential.roundproxies.com` |
-
 | **Port** | Connection port | `5000` |
-
 | **Client ID** | Your unique client identifier | `client-77ec791562d243759695e8fb5dc07a81` |
-
 | **Targeting** | Geographic targeting parameters | `country-Israel-state-northerndistrict-city-maghar` |
-
 | **Session** | Session identifier for IP persistence | `session-lw515ejc` |
-
 | **Password** | Authentication password | `df1a09d0542141d1b910d5d7e7a5d5ab` |
 
 ## Geographic Targeting
@@ -36,58 +29,44 @@ residential.roundproxies.com:5000:client-{CLIENT_ID}-{TARGETING_PARAMS}-session-
 
 Target specific countries by including the country parameter in your proxy credentials:
 
-\`\`\`
-
+```
 country-{COUNTRY_NAME}
-
-\`\`\`
+```
 
 **Available countries in examples:**
 
 - Israel
-
 - Hungary
-
 - Germany
 
 ### State/Region Targeting
 
 Narrow down to specific states or regions:
 
-\`\`\`
-
+```
 state-{STATE_NAME}
-
-\`\`\`
+```
 
 **Examples:**
 
 - `state-northerndistrict` (Israel)
-
 - `state-pestcounty` (Hungary)
-
 - `state-citystatebremen` (Germany)
-
 - `state-landberlin` (Germany)
 
 ### City Targeting
 
 Target specific cities for maximum precision:
 
-\`\`\`
-
+```
 city-{CITY_NAME}
-
-\`\`\`
+```
 
 **Examples:**
 
 - `city-maghar` (Israel)
-
 - `city-god` (Hungary)
-
 - `city-bremen` (Germany)
-
 - `city-berlin` (Germany)
 
 ## Session Management
@@ -96,372 +75,223 @@ Sessions allow you to maintain the same IP address across multiple requests, whi
 
 ### Session Format
 
-\`\`\`
-
+```
 session-{SESSION_ID}
-
-\`\`\`
+```
 
 The session ID can be any alphanumeric string. Using the same session ID will route your requests through the same IP address.
 
 **Example session IDs:**
 
 - `session-lw515ejc`
-
 - `session-gbyii4th`
-
 - `session-wwmchxfs`
-
 - `session-fnzwtath`
 
-\<Tip\>
-
+<Tip>
 Generate unique session IDs for different browsing sessions or tasks to maintain separate IP identities.
-
-\</Tip\>
+</Tip>
 
 ## Usage Examples
 
 ### Israel - Northern District - Maghar
 
-\`\`\`
-
-Host: [residential.roundproxies.com](http://residential.roundproxies.com)
-
+```
+Host: residential.roundproxies.com
 Port: 5000
-
 Username: client-77ec791562d243759695e8fb5dc07a81-country-Israel-state-northerndistrict-city-maghar-session-lw515ejc
-
 Password: df1a09d0542141d1b910d5d7e7a5d5ab
-
-\`\`\`
+```
 
 ### Hungary - Pest County - Göd
 
-\`\`\`
-
-Host: [residential.roundproxies.com](http://residential.roundproxies.com)
-
+```
+Host: residential.roundproxies.com
 Port: 5000
-
 Username: client-77ec791562d243759695e8fb5dc07a81-country-Hungary-state-pestcounty-city-god-session-gbyii4th
-
 Password: df1a09d0542141d1b910d5d7e7a5d5ab
-
-\`\`\`
+```
 
 ### Germany - Bremen
 
-\`\`\`
-
-Host: [residential.roundproxies.com](http://residential.roundproxies.com)
-
+```
+Host: residential.roundproxies.com
 Port: 5000
-
 Username: client-77ec791562d243759695e8fb5dc07a81-country-Germany-state-citystatebremen-city-bremen-session-wwmchxfs
-
 Password: df1a09d0542141d1b910d5d7e7a5d5ab
-
-\`\`\`
+```
 
 ### Germany - Berlin
 
-\`\`\`
-
-Host: [residential.roundproxies.com](http://residential.roundproxies.com)
-
+```
+Host: residential.roundproxies.com
 Port: 5000
-
 Username: client-77ec791562d243759695e8fb5dc07a81-country-Germany-state-landberlin-city-berlin-session-fnzwtath
-
 Password: df1a09d0542141d1b910d5d7e7a5d5ab
-
-\`\`\`
+```
 
 ## Implementation Guide
 
-\<Steps\>
-
-  \<Step title="Configure Your Application"\>
-
+<Steps>
+  <Step title="Configure Your Application">
     Set up your HTTP client or browser to use the proxy server with the hostname and port.
-
-  \</Step\>
-
+  </Step>
   
-
-  \<Step title="Build Your Username"\>
-
+  <Step title="Build Your Username">
     Construct the username string with your client ID, targeting parameters, and session ID.
-
-  \</Step\>
-
+  </Step>
   
-
-  \<Step title="Authenticate"\>
-
+  <Step title="Authenticate">
     Use your password to authenticate with the proxy server.
-
-  \</Step\>
-
+  </Step>
   
-
-  \<Step title="Test Connection"\>
-
+  <Step title="Test Connection">
     Verify the connection and confirm your IP address matches the targeted location.
-
-  \</Step\>
-
-\</Steps\>
+  </Step>
+</Steps>
 
 ### Code Examples
 
-\<CodeGroup\>
-
-\`\`\`python Python
-
+<CodeGroup>
+```python Python
 import requests
 
 proxies = {
-
     'http': 'http://client-77ec791562d243759695e8fb5dc07a81-country-Germany-state-landberlin-city-berlin-session-fnzwtath:df1a09d0542141d1b910d5d7e7a5d5ab@residential.roundproxies.com:5000',
-
     'https': 'http://client-77ec791562d243759695e8fb5dc07a81-country-Germany-state-landberlin-city-berlin-session-fnzwtath:df1a09d0542141d1b910d5d7e7a5d5ab@residential.roundproxies.com:5000'
-
 }
 
 response = requests.get('https://api.ipify.org?format=json', proxies=proxies)
-
 print(response.json())
+```
 
-\`\`\`
-
-\`\`\`javascript Node.js
-
+```javascript Node.js
 const axios = require('axios');
 
 const proxy = {
-
-  host: '[residential.roundproxies.com](http://residential.roundproxies.com)',
-
+  host: 'residential.roundproxies.com',
   port: 5000,
-
   auth: {
-
     username: 'client-77ec791562d243759695e8fb5dc07a81-country-Germany-state-landberlin-city-berlin-session-fnzwtath',
-
     password: 'df1a09d0542141d1b910d5d7e7a5d5ab'
-
   }
-
 };
 
 axios.get('https://api.ipify.org?format=json', { proxy })
+  .then(response => console.log(response.data))
+  .catch(error => console.error(error));
+```
 
-  .then(response =\> console.log([response.data](http://response.data)))
+```php PHP
+<?php
+$proxy = 'residential.roundproxies.com:5000';
+$proxyAuth = 'client-77ec791562d243759695e8fb5dc07a81-country-Germany-state-landberlin-city-berlin-session-fnzwtath:df1a09d0542141d1b910d5d7e7a5d5ab';
 
-  .catch(error =\> console.error(error));
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, 'https://api.ipify.org?format=json');
+curl_setopt($ch, CURLOPT_PROXY, $proxy);
+curl_setopt($ch, CURLOPT_PROXYUSERPWD, $proxyAuth);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+$response = curl_exec($ch);
+curl_close($ch);
 
-\`\`\`
+echo $response;
+?>
+```
 
-\`\`\`php PHP
-
-\<?php
-
-\$proxy = 'residential.roundproxies.com:5000';
-
-\$proxyAuth = 'client-77ec791562d243759695e8fb5dc07a81-country-Germany-state-landberlin-city-berlin-session-fnzwtath:df1a09d0542141d1b910d5d7e7a5d5ab';
-
-\$ch = curl_init();
-
-curl_setopt(\$ch, CURLOPT_URL, 'https://api.ipify.org?format=json');
-
-curl_setopt(\$ch, CURLOPT_PROXY, \$proxy);
-
-curl_setopt(\$ch, CURLOPT_PROXYUSERPWD, \$proxyAuth);
-
-curl_setopt(\$ch, CURLOPT_RETURNTRANSFER, true);
-
-\$response = curl_exec(\$ch);
-
-curl_close(\$ch);
-
-echo \$response;
-
-?\>
-
-\`\`\`
-
-\`\`\`go Go
-
+```go Go
 package main
 
 import (
-
     "fmt"
-
     "io"
-
     "net/http"
-
     "net/url"
-
 )
 
 func main() {
-
-    proxyURL, \_ := url.Parse("http://client-77ec791562d243759695e8fb5dc07a81-country-Germany-state-landberlin-city-berlin-session-fnzwtath:df1a09d0542141d1b910d5d7e7a5d5ab@residential.roundproxies.com:5000")
-
+    proxyURL, _ := url.Parse("http://client-77ec791562d243759695e8fb5dc07a81-country-Germany-state-landberlin-city-berlin-session-fnzwtath:df1a09d0542141d1b910d5d7e7a5d5ab@residential.roundproxies.com:5000")
     
-
     client := &http.Client{
-
         Transport: &http.Transport{
-
             Proxy: http.ProxyURL(proxyURL),
-
         },
-
     }
-
     
-
     resp, err := client.Get("https://api.ipify.org?format=json")
-
     if err != nil {
-
         panic(err)
-
     }
-
     defer resp.Body.Close()
-
     
-
-    body, \_ := io.ReadAll(resp.Body)
-
+    body, _ := io.ReadAll(resp.Body)
     fmt.Println(string(body))
-
 }
-
-\`\`\`
-
-\</CodeGroup\>
+```
+</CodeGroup>
 
 ## Best Practices
 
-\<AccordionGroup\>
-
-  \<Accordion title="Session Management"\>
-
+<AccordionGroup>
+  <Accordion title="Session Management">
     - Use unique session IDs for different tasks or browsing sessions
-
     - Keep session IDs consistent when you need to maintain the same IP
-
     - Rotate session IDs periodically to distribute load
-
-  \</Accordion\>
-
-  \<Accordion title="Geographic Targeting"\>
-
+  </Accordion>
+  <Accordion title="Geographic Targeting">
     - Use the most specific targeting available for your use case
-
     - Consider timezone and language when selecting locations
-
     - Test different locations to find optimal performance
-
-  \</Accordion\>
-
-  \<Accordion title="Performance Optimization"\>
-
+  </Accordion>
+  <Accordion title="Performance Optimization">
     - Reuse connections when possible to reduce latency
-
     - Implement proper error handling and retry logic
-
     - Monitor response times and adjust targeting as needed
-
-  \</Accordion\>
-
-  \<Accordion title="Security"\>
-
+  </Accordion>
+  <Accordion title="Security">
     - Never expose your password in client-side code
-
     - Store credentials securely using environment variables
-
     - Rotate passwords regularly for enhanced security
+  </Accordion>
+</AccordionGroup>
 
-  \</Accordion\>
-
-\</AccordionGroup\>
-
-\<Warning\>
-
+<Warning>
 Keep your client ID and password confidential. Anyone with these credentials can use your proxy allocation.
-
-\</Warning\>
+</Warning>
 
 ## Troubleshooting
 
-\<AccordionGroup\>
-
-  \<Accordion title="Connection Refused"\>
-
+<AccordionGroup>
+  <Accordion title="Connection Refused">
     - Verify the hostname and port are correct
-
     - Check if your IP is whitelisted (if applicable)
-
     - Ensure your account has sufficient proxy credits
-
-  \</Accordion\>
-
-  \<Accordion title="Authentication Failed"\>
-
+  </Accordion>
+  <Accordion title="Authentication Failed">
     - Double-check your client ID and password
-
     - Ensure there are no extra spaces in the username
-
     - Verify your account is active
-
-  \</Accordion\>
-
-  \<Accordion title="Wrong Geographic Location"\>
-
+  </Accordion>
+  <Accordion title="Wrong Geographic Location">
     - Verify the country, state, and city names are spelled correctly
-
     - Use lowercase with no spaces (use hyphens for multi-word names)
-
     - Check if the requested location is available in your plan
-
-  \</Accordion\>
-
-  \<Accordion title="IP Changes During Session"\>
-
+  </Accordion>
+  <Accordion title="IP Changes During Session">
     - Ensure you're using the same session ID
-
     - Check if the session has expired (session duration varies)
-
     - Verify network connectivity hasn't been interrupted
-
-  \</Accordion\>
-
-\</AccordionGroup\>
+  </Accordion>
+</AccordionGroup>
 
 ## Need Help?
 
-\<CardGroup cols={2}\>
-
-  \<Card title="Support" icon="headset" href="/support"\>
-
+<CardGroup cols={2}>
+  <Card title="Support" icon="headset" href="/support">
     Contact our support team for assistance
-
-  \</Card\>
-
+  </Card>
   
-
-  \<Card title="API Reference" icon="code" href="/api-reference"\>
-
+  <Card title="API Reference" icon="code" href="/api-reference">
     Explore our complete API documentation
-
-  \</Card\>
-
-\</CardGroup\>
+  </Card>
+</CardGroup>
