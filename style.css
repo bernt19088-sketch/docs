@@ -39,15 +39,26 @@ a.card.dark\:bg-background-dark {
   background-color: #1C1B1B !important;
 }
 
-/* Change code block backgrounds to match sidebar */
+/* Change code block backgrounds to match sidebar - comprehensive selectors */
+.code-block,
 .code-block-background,
-[data-component-part="code-block-root"] {
+[data-component-part="code-block-root"],
+.code-block .bg-white,
+.shiki,
+.shiki pre,
+.shiki code {
   background-color: #1C1B1B !important;
 }
 
-/* Target code block pre and code elements */
+/* Target all pre elements in code blocks */
+.code-block pre,
 .code-block-background pre,
 [data-component-part="code-block-root"] pre {
+  background-color: #1C1B1B !important;
+}
+
+/* Target the wrapper div with bg-white class */
+div.bg-white[data-component-part="code-block-root"] {
   background-color: #1C1B1B !important;
 }
 
