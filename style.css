@@ -23,10 +23,6 @@
   background-color: #1C1B1B !important;
 }
 
-#contextual {
-  background-color: #1C1B1B !important;
-}
-
 /* Also target by class combination */
 .bg-background-light.dark\:bg-background-dark.border-t {
   background-color: #1C1B1B !important;
@@ -40,6 +36,18 @@
 /* More specific card selector */
 a.card.bg-white,
 a.card.dark\:bg-background-dark {
+  background-color: #1C1B1B !important;
+}
+
+/* Change code block backgrounds to match sidebar */
+.code-block-background,
+[data-component-part="code-block-root"] {
+  background-color: #1C1B1B !important;
+}
+
+/* Target code block pre and code elements */
+.code-block-background pre,
+[data-component-part="code-block-root"] pre {
   background-color: #1C1B1B !important;
 }
 
