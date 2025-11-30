@@ -1,87 +1,467 @@
 ---
-title: 'Navigation'
-description: 'The navigation field in docs.json defines the pages that go in the navigation menu'
-icon: 'map'
+title: "Navigation"
+description: "The navigation field in docs.json defines the pages that go in the navigation menu"
+icon: "map"
 ---
 
-The navigation menu is the list of links on every website.
+Roundproxies residential proxies provide access to a global network of residential IP addresses with advanced targeting capabilities. Our proxies support country, state, and city-level targeting, along with session management for consistent IP addresses.
 
-You will likely update `docs.json` every time you add a new page. Pages do not show up automatically.
+### Proxy Structure
 
-## Navigation syntax
+Our residential proxies follow a standardized format that allows precise geographic targeting and session control:
 
-Our navigation syntax is recursive which means you can make nested navigation groups. You don't need to include `.mdx` in page names.
+`residential.roundproxies.com:5000:client-{CLIENT_ID}-{TARGETING_PARAMS}-session-{SESSION_ID}:{PASSWORD}`
 
-<CodeGroup>
+### Components Breakdown
 
-```json Regular Navigation
-"navigation": {
-  "tabs": [
-    {
-      "tab": "Docs",
-      "groups": [
-        {
-          "group": "Getting Started",
-          "pages": ["quickstart"]
-        }
-      ]
-    }
-  ]
+| Component | Description | Example |
+
+|-----------|-------------|---------|
+
+| **Host** | Proxy server hostname | `residential.roundproxies.com` |
+
+| **Port** | Connection port | `5000` |
+
+| **Client ID** | Your unique client identifier | `client-77ec791562d243759695e8fb5dc07a81` |
+
+| **Targeting** | Geographic targeting parameters | `country-Israel-state-northerndistrict-city-maghar` |
+
+| **Session** | Session identifier for IP persistence | `session-lw515ejc` |
+
+| **Password** | Authentication password | `df1a09d0542141d1b910d5d7e7a5d5ab` |
+
+## Geographic Targeting
+
+### Country Targeting
+
+Target specific countries by including the country parameter in your proxy credentials:
+
+\`\`\`
+
+country-{COUNTRY_NAME}
+
+\`\`\`
+
+**Available countries in examples:**
+
+- Israel
+
+- Hungary
+
+- Germany
+
+### State/Region Targeting
+
+Narrow down to specific states or regions:
+
+\`\`\`
+
+state-{STATE_NAME}
+
+\`\`\`
+
+**Examples:**
+
+- `state-northerndistrict` (Israel)
+
+- `state-pestcounty` (Hungary)
+
+- `state-citystatebremen` (Germany)
+
+- `state-landberlin` (Germany)
+
+### City Targeting
+
+Target specific cities for maximum precision:
+
+\`\`\`
+
+city-{CITY_NAME}
+
+\`\`\`
+
+**Examples:**
+
+- `city-maghar` (Israel)
+
+- `city-god` (Hungary)
+
+- `city-bremen` (Germany)
+
+- `city-berlin` (Germany)
+
+## Session Management
+
+Sessions allow you to maintain the same IP address across multiple requests, which is essential for activities requiring consistent identity.
+
+### Session Format
+
+\`\`\`
+
+session-{SESSION_ID}
+
+\`\`\`
+
+The session ID can be any alphanumeric string. Using the same session ID will route your requests through the same IP address.
+
+**Example session IDs:**
+
+- `session-lw515ejc`
+
+- `session-gbyii4th`
+
+- `session-wwmchxfs`
+
+- `session-fnzwtath`
+
+\<Tip\>
+
+Generate unique session IDs for different browsing sessions or tasks to maintain separate IP identities.
+
+\</Tip\>
+
+## Usage Examples
+
+### Israel - Northern District - Maghar
+
+\`\`\`
+
+Host: [residential.roundproxies.com](http://residential.roundproxies.com)
+
+Port: 5000
+
+Username: client-77ec791562d243759695e8fb5dc07a81-country-Israel-state-northerndistrict-city-maghar-session-lw515ejc
+
+Password: df1a09d0542141d1b910d5d7e7a5d5ab
+
+\`\`\`
+
+### Hungary - Pest County - Göd
+
+\`\`\`
+
+Host: [residential.roundproxies.com](http://residential.roundproxies.com)
+
+Port: 5000
+
+Username: client-77ec791562d243759695e8fb5dc07a81-country-Hungary-state-pestcounty-city-god-session-gbyii4th
+
+Password: df1a09d0542141d1b910d5d7e7a5d5ab
+
+\`\`\`
+
+### Germany - Bremen
+
+\`\`\`
+
+Host: [residential.roundproxies.com](http://residential.roundproxies.com)
+
+Port: 5000
+
+Username: client-77ec791562d243759695e8fb5dc07a81-country-Germany-state-citystatebremen-city-bremen-session-wwmchxfs
+
+Password: df1a09d0542141d1b910d5d7e7a5d5ab
+
+\`\`\`
+
+### Germany - Berlin
+
+\`\`\`
+
+Host: [residential.roundproxies.com](http://residential.roundproxies.com)
+
+Port: 5000
+
+Username: client-77ec791562d243759695e8fb5dc07a81-country-Germany-state-landberlin-city-berlin-session-fnzwtath
+
+Password: df1a09d0542141d1b910d5d7e7a5d5ab
+
+\`\`\`
+
+## Implementation Guide
+
+\<Steps\>
+
+  \<Step title="Configure Your Application"\>
+
+    Set up your HTTP client or browser to use the proxy server with the hostname and port.
+
+  \</Step\>
+
+  
+
+  \<Step title="Build Your Username"\>
+
+    Construct the username string with your client ID, targeting parameters, and session ID.
+
+  \</Step\>
+
+  
+
+  \<Step title="Authenticate"\>
+
+    Use your password to authenticate with the proxy server.
+
+  \</Step\>
+
+  
+
+  \<Step title="Test Connection"\>
+
+    Verify the connection and confirm your IP address matches the targeted location.
+
+  \</Step\>
+
+\</Steps\>
+
+### Code Examples
+
+\<CodeGroup\>
+
+\`\`\`python Python
+
+import requests
+
+proxies = {
+
+    'http': 'http://client-77ec791562d243759695e8fb5dc07a81-country-Germany-state-landberlin-city-berlin-session-fnzwtath:df1a09d0542141d1b910d5d7e7a5d5ab@residential.roundproxies.com:5000',
+
+    'https': 'http://client-77ec791562d243759695e8fb5dc07a81-country-Germany-state-landberlin-city-berlin-session-fnzwtath:df1a09d0542141d1b910d5d7e7a5d5ab@residential.roundproxies.com:5000'
+
 }
-```
 
-```json Nested Navigation
-"navigation": {
-  "tabs": [
-    {
-      "tab": "Docs",
-      "groups": [
-        {
-          "group": "Getting Started",
-          "pages": [
-            "quickstart",
-            {
-              "group": "Nested Reference Pages",
-              "pages": ["nested-reference-page"]
-            }
-          ]
-        }
-      ]
+response = requests.get('https://api.ipify.org?format=json', proxies=proxies)
+
+print(response.json())
+
+\`\`\`
+
+\`\`\`javascript Node.js
+
+const axios = require('axios');
+
+const proxy = {
+
+  host: '[residential.roundproxies.com](http://residential.roundproxies.com)',
+
+  port: 5000,
+
+  auth: {
+
+    username: 'client-77ec791562d243759695e8fb5dc07a81-country-Germany-state-landberlin-city-berlin-session-fnzwtath',
+
+    password: 'df1a09d0542141d1b910d5d7e7a5d5ab'
+
+  }
+
+};
+
+axios.get('https://api.ipify.org?format=json', { proxy })
+
+  .then(response =\> console.log([response.data](http://response.data)))
+
+  .catch(error =\> console.error(error));
+
+\`\`\`
+
+\`\`\`php PHP
+
+\<?php
+
+\$proxy = 'residential.roundproxies.com:5000';
+
+\$proxyAuth = 'client-77ec791562d243759695e8fb5dc07a81-country-Germany-state-landberlin-city-berlin-session-fnzwtath:df1a09d0542141d1b910d5d7e7a5d5ab';
+
+\$ch = curl_init();
+
+curl_setopt(\$ch, CURLOPT_URL, 'https://api.ipify.org?format=json');
+
+curl_setopt(\$ch, CURLOPT_PROXY, \$proxy);
+
+curl_setopt(\$ch, CURLOPT_PROXYUSERPWD, \$proxyAuth);
+
+curl_setopt(\$ch, CURLOPT_RETURNTRANSFER, true);
+
+\$response = curl_exec(\$ch);
+
+curl_close(\$ch);
+
+echo \$response;
+
+?\>
+
+\`\`\`
+
+\`\`\`go Go
+
+package main
+
+import (
+
+    "fmt"
+
+    "io"
+
+    "net/http"
+
+    "net/url"
+
+)
+
+func main() {
+
+    proxyURL, \_ := url.Parse("http://client-77ec791562d243759695e8fb5dc07a81-country-Germany-state-landberlin-city-berlin-session-fnzwtath:df1a09d0542141d1b910d5d7e7a5d5ab@residential.roundproxies.com:5000")
+
+    
+
+    client := &http.Client{
+
+        Transport: &http.Transport{
+
+            Proxy: http.ProxyURL(proxyURL),
+
+        },
+
     }
-  ]
-}
-```
 
-</CodeGroup>
+    
 
-## Folders
+    resp, err := client.Get("https://api.ipify.org?format=json")
 
-Simply put your MDX files in folders and update the paths in `docs.json`.
+    if err != nil {
 
-For example, to have a page at `https://yoursite.com/your-folder/your-page` you would make a folder called `your-folder` containing an MDX file called `your-page.mdx`.
+        panic(err)
 
-<Warning>
-
-You cannot use `api` for the name of a folder unless you nest it inside another folder. Mintlify uses Next.js which reserves the top-level `api` folder for internal server calls. A folder name such as `api-reference` would be accepted.
-
-</Warning>
-
-```json Navigation With Folder
-"navigation": {
-  "tabs": [
-    {
-      "tab": "Docs",
-      "groups": [
-        {
-          "group": "Group Name",
-          "pages": ["your-folder/your-page"]
-        }
-      ]
     }
-  ]
+
+    defer resp.Body.Close()
+
+    
+
+    body, \_ := io.ReadAll(resp.Body)
+
+    fmt.Println(string(body))
+
 }
-```
 
-## Hidden pages
+\`\`\`
 
-MDX files not included in `docs.json` will not show up in the sidebar but are accessible through the search bar and by linking directly to them.
+\</CodeGroup\>
+
+## Best Practices
+
+\<AccordionGroup\>
+
+  \<Accordion title="Session Management"\>
+
+    - Use unique session IDs for different tasks or browsing sessions
+
+    - Keep session IDs consistent when you need to maintain the same IP
+
+    - Rotate session IDs periodically to distribute load
+
+  \</Accordion\>
+
+  \<Accordion title="Geographic Targeting"\>
+
+    - Use the most specific targeting available for your use case
+
+    - Consider timezone and language when selecting locations
+
+    - Test different locations to find optimal performance
+
+  \</Accordion\>
+
+  \<Accordion title="Performance Optimization"\>
+
+    - Reuse connections when possible to reduce latency
+
+    - Implement proper error handling and retry logic
+
+    - Monitor response times and adjust targeting as needed
+
+  \</Accordion\>
+
+  \<Accordion title="Security"\>
+
+    - Never expose your password in client-side code
+
+    - Store credentials securely using environment variables
+
+    - Rotate passwords regularly for enhanced security
+
+  \</Accordion\>
+
+\</AccordionGroup\>
+
+\<Warning\>
+
+Keep your client ID and password confidential. Anyone with these credentials can use your proxy allocation.
+
+\</Warning\>
+
+## Troubleshooting
+
+\<AccordionGroup\>
+
+  \<Accordion title="Connection Refused"\>
+
+    - Verify the hostname and port are correct
+
+    - Check if your IP is whitelisted (if applicable)
+
+    - Ensure your account has sufficient proxy credits
+
+  \</Accordion\>
+
+  \<Accordion title="Authentication Failed"\>
+
+    - Double-check your client ID and password
+
+    - Ensure there are no extra spaces in the username
+
+    - Verify your account is active
+
+  \</Accordion\>
+
+  \<Accordion title="Wrong Geographic Location"\>
+
+    - Verify the country, state, and city names are spelled correctly
+
+    - Use lowercase with no spaces (use hyphens for multi-word names)
+
+    - Check if the requested location is available in your plan
+
+  \</Accordion\>
+
+  \<Accordion title="IP Changes During Session"\>
+
+    - Ensure you're using the same session ID
+
+    - Check if the session has expired (session duration varies)
+
+    - Verify network connectivity hasn't been interrupted
+
+  \</Accordion\>
+
+\</AccordionGroup\>
+
+## Need Help?
+
+\<CardGroup cols={2}\>
+
+  \<Card title="Support" icon="headset" href="/support"\>
+
+    Contact our support team for assistance
+
+  \</Card\>
+
+  
+
+  \<Card title="API Reference" icon="code" href="/api-reference"\>
+
+    Explore our complete API documentation
+
+  \</Card\>
+
+\</CardGroup\>
