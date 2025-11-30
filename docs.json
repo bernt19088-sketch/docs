@@ -23,8 +23,8 @@
           {
             "group": "Residential Proxies",
             "pages": [
-              "essentials/settings",
-              "essentials/navigation"
+              "residentials/settings",
+              "residentials/navigation"
             ]
           }
         ]
