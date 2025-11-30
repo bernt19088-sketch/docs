@@ -102,21 +102,8 @@ The session ID can be any alphanumeric string. Using the same session ID will ro
   Generate unique session IDs for different browsing sessions or tasks to maintain separate IP identities.
 </Tip>
 
-## Implementation Guide
-
 <Steps>
-  <Step title="Configure Your Application">
-    Set up your HTTP client or browser to use the proxy server with the hostname and port.
-  </Step>
-  <Step title="Build Your Username">
-    Construct the username string with your client ID, targeting parameters, and session ID.
-  </Step>
-  <Step title="Authenticate">
-    Use your password to authenticate with the proxy server.
-  </Step>
-  <Step title="Test Connection">
-    Verify the connection and confirm your IP address matches the targeted location.
-  </Step>
+  
 </Steps>
 
 ### Code Examples
@@ -127,8 +114,8 @@ The session ID can be any alphanumeric string. Using the same session ID will ro
 import requests
 
 proxies = {
-    'http': 'http://client-YOUR_CLIENT-country-Germany-state-landberlin-city-berlin-session-fnzwtath:YOUR_PASSWORD@residential.roundproxies.com:5000',
-    'https': 'http://client-YOUR_CLIENT-country-Germany-state-landberlin-city-berlin-session-fnzwtath:YOUR_PASSWORD@residential.roundproxies.com:5000'
+    'http': 'http://client-{}-country-Germany-state-landberlin-city-berlin-session-fnzwtath:df1a09d0542141d1b910d5d7e7a5d5ab@residential.roundproxies.com:5000',
+    'https': 'http://client-77ec791562d243759695e8fb5dc07a81-country-Germany-state-landberlin-city-berlin-session-fnzwtath:df1a09d0542141d1b910d5d7e7a5d5ab@residential.roundproxies.com:5000'
 }
 
 response = requests.get('https://api.ipify.org?format=json', proxies=proxies)
