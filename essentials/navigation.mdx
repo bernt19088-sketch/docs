@@ -10,18 +10,20 @@ Roundproxies residential proxies provide access to a global network of residenti
 
 Our residential proxies follow a standardized format that allows precise geographic targeting and session control:
 
-residential.roundproxies.com:5000:client-{CLIENT_ID}-{TARGETING_PARAMS}-session-{SESSION_ID}:{PASSWORD}
+```
+residential.roundproxies.com:5000:client-CLIENT_ID-TARGETING_PARAMS-session-SESSION_ID:PASSWORD
+```
 
 ### Components Breakdown
 
-| Component | Description | Example |
-|-----------|-------------|---------|
-| **Host** | Proxy server hostname | `residential.roundproxies.com` |
-| **Port** | Connection port | `5000` |
-| **Client ID** | Your unique client identifier | `client-77ec791562d243759695e8fb5dc07a81` |
-| **Targeting** | Geographic targeting parameters | `country-Israel-state-northerndistrict-city-maghar` |
-| **Session** | Session identifier for IP persistence | `session-lw515ejc` |
-| **Password** | Authentication password | `df1a09d0542141d1b910d5d7e7a5d5ab` |
+| Component     | Description                           | Example                                             |
+| ------------- | ------------------------------------- | --------------------------------------------------- |
+| **Host**      | Proxy server hostname                 | `residential.roundproxies.com`                      |
+| **Port**      | Connection port                       | `5000`                                              |
+| **Client ID** | Your unique client identifier         | `client-77ec791562d243759695e8fb5dc07a81`           |
+| **Targeting** | Geographic targeting parameters       | `country-Israel-state-northerndistrict-city-maghar` |
+| **Session**   | Session identifier for IP persistence | `session-lw515ejc`                                  |
+| **Password**  | Authentication password               | `df1a09d0542141d1b910d5d7e7a5d5ab`                  |
 
 ## Geographic Targeting
 
@@ -35,8 +37,8 @@ country-{COUNTRY_NAME}
 
 **Available countries in examples:**
 
-- Israel
-- Hungary
+- United States
+- Canada
 - Germany
 
 ### State/Region Targeting
@@ -89,7 +91,7 @@ The session ID can be any alphanumeric string. Using the same session ID will ro
 - `session-fnzwtath`
 
 <Tip>
-Generate unique session IDs for different browsing sessions or tasks to maintain separate IP identities.
+  Generate unique session IDs for different browsing sessions or tasks to maintain separate IP identities.
 </Tip>
 
 ## Usage Examples
@@ -136,15 +138,12 @@ Password: df1a09d0542141d1b910d5d7e7a5d5ab
   <Step title="Configure Your Application">
     Set up your HTTP client or browser to use the proxy server with the hostname and port.
   </Step>
-  
   <Step title="Build Your Username">
     Construct the username string with your client ID, targeting parameters, and session ID.
   </Step>
-  
   <Step title="Authenticate">
     Use your password to authenticate with the proxy server.
   </Step>
-  
   <Step title="Test Connection">
     Verify the connection and confirm your IP address matches the targeted location.
   </Step>
@@ -153,6 +152,7 @@ Password: df1a09d0542141d1b910d5d7e7a5d5ab
 ### Code Examples
 
 <CodeGroup>
+
 ```python Python
 import requests
 
@@ -164,6 +164,7 @@ proxies = {
 response = requests.get('https://api.ipify.org?format=json', proxies=proxies)
 print(response.json())
 ```
+
 
 ```javascript Node.js
 const axios = require('axios');
@@ -182,6 +183,7 @@ axios.get('https://api.ipify.org?format=json', { proxy })
   .catch(error => console.error(error));
 ```
 
+
 ```php PHP
 <?php
 $proxy = 'residential.roundproxies.com:5000';
@@ -198,6 +200,7 @@ curl_close($ch);
 echo $response;
 ?>
 ```
+
 
 ```go Go
 package main
@@ -228,6 +231,7 @@ func main() {
     fmt.Println(string(body))
 }
 ```
+
 </CodeGroup>
 
 ## Best Practices
@@ -256,7 +260,7 @@ func main() {
 </AccordionGroup>
 
 <Warning>
-Keep your client ID and password confidential. Anyone with these credentials can use your proxy allocation.
+  Keep your client ID and password confidential. Anyone with these credentials can use your proxy allocation.
 </Warning>
 
 ## Troubleshooting
@@ -290,7 +294,6 @@ Keep your client ID and password confidential. Anyone with these credentials can
   <Card title="Support" icon="headset" href="/support">
     Contact our support team for assistance
   </Card>
-  
   <Card title="API Reference" icon="code" href="/api-reference">
     Explore our complete API documentation
   </Card>
