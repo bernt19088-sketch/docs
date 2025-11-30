@@ -77,6 +77,10 @@ body {
   background-color: #1F1E1E !important;
 }
 
+#pagination {
+  background-color: #1C1B1B !important;
+}
+
 /* Footer styling */
 footer {
   margin-top: 2rem;
